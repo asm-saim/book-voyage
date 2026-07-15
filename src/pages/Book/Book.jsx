@@ -9,7 +9,7 @@ const Book = ({ fetchPromise, bookData }) => {
     console.log(bookData)
 
     const { author, bookId, bookName, category, image, publisher,
-        rating, review, totalPages, yearOfPublishing } = bookData
+        rating, review, totalPages, yearOfPublishing, tags } = bookData
 
 
     return (
@@ -20,11 +20,17 @@ const Book = ({ fetchPromise, bookData }) => {
                     alt="Shoes" />
             </figure>
             <div className="card-body">
+                <div className='flex justify-start gap-5'>
+                    {
+                        tags.map(tag => <button className='bg-gray-700 text-xs py-1 px-3 rounded-lg'>{tag}</button>)
+                    }
+                </div>
+
                 <h2 className="card-title">
                     {bookName}
-                    <div className="badge badge-secondary">NEW</div>
+                    <div className="badge badge-secondary">{yearOfPublishing}</div>
                 </h2>
-                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+                <p className='line-clamp-3'>{review}</p>
                 <div className="card-actions justify-end">
                     <div className="badge badge-outline pb-1">{category}</div>
                     <div className="badge badge-outline pb-1">{rating} <IoStarSharp /></div>
