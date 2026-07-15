@@ -7,7 +7,7 @@ const Book = ({ fetchPromise, bookData }) => {
 
     // const data = use(fetchPromise)
     // console.log("d", data)
-    console.log(bookData)
+    // console.log(bookData)
 
     const { author, bookId, bookName, category, image, publisher,
         rating, review, totalPages, yearOfPublishing, tags } = bookData
@@ -24,7 +24,7 @@ const Book = ({ fetchPromise, bookData }) => {
                 <div className="card-body">
                     <div className='flex justify-start gap-5'>
                         {
-                            tags.map(tag => <button className='bg-gray-700 text-xs py-1 px-3 rounded-lg'>{tag}</button>)
+                            tags.map((tag, index) => <button key={index} className='bg-gray-700 text-xs py-1 px-3 rounded-lg'>{tag}</button>)
                         }
                     </div>
 
