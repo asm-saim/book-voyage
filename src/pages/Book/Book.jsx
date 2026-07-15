@@ -30,6 +30,8 @@ const Book = ({ fetchPromise, bookData }) => {
                     {bookName}
                     <div className="badge badge-secondary">{yearOfPublishing}</div>
                 </h2>
+                <h3><span className='font-bold'>Book by:</span> {publisher}</h3>
+                <div className='border text-gray-600 border-dashed'></div>
                 <p className='line-clamp-3'>{review}</p>
                 <div className="card-actions justify-end">
                     <div className="badge badge-outline pb-1">{category}</div>
