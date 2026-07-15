@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router';
 
 const Navbar = () => {
     const list = <>
-        <li className='m-2'>Home</li>
-        <li className='m-2'>About</li>
+        <NavLink to="/" className={({ isActive }) => isActive ? "text-green-400" : ""}><li className='m-2'>Home</li></NavLink>
+        <NavLink to="/about" className={({ isActive }) => isActive ? "text-green-400" : ""}><li className='m-2'>About</li></NavLink>
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
