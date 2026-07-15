@@ -15,7 +15,7 @@ const Book = ({ fetchPromise, bookData }) => {
 
     return (
         <Link to={`/book-details/${bookId}`}>
-            <div className="card bg-base-100 w-80 shadow-sm mx-auto bg-gray-800">
+            <div className="card bg-base-100 w-80 shadow-sm mx-auto bg-gray-700">
                 <figure className=' pt-5'>
                     <img className='h-60'
                         src={image}
