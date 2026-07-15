@@ -9,13 +9,24 @@ const BookDetails = () => {
     //load data
     const data = useLoaderData();
 
-    const bookData = data.find(book => book.bookId === bkId)
-    console.log(bookData)
+    const singleBook = data.find(book => book.bookId === bkId)
+    console.log(singleBook);
+
+    const { author, bookId, bookName, category, image, publisher,
+        rating, review, totalPages, yearOfPublishing, tags } = singleBook
+
 
 
     return (
-        <div>
-            <h2>Hello details </h2>
+        <div className='border border-amber-300 flex'>
+            <div className='flex-1'>
+                <img className='w-72' src={image} alt="" />
+                <h2>{bookName}</h2>
+            </div>
+            <div className='flex-1'>
+                <h2>{author}</h2>
+            </div>
+
         </div>
     );
 };
