@@ -3,13 +3,13 @@ import banner from '../../assets/books.jpg'
 
 const Banner = () => {
     return (
-        <div className='border border-amber-300 my-5 flex justify-between rounded-2xl overflow-hidden'>
-            <div className='my-auto space-y-5'>
+        <div className='my-5 flex justify-between rounded-2xl overflow-hidden'>
+            <div className='my-auto space-y-10'>
                 <h1 className='font-bold text-5xl text-mist-400'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, ipsa!</h1>
 
-                <button className='btn bg-amber-400 text-black'>Learn More</button>
+                <button className='mx-auto btn bg-lime-300 text-base text-black'>Learn More</button>
             </div>
-            <img src={banner} alt="" />
+            <img className='h-[470px] object-cover w-1/2' src={banner} alt="" />
 
         </div>
     );
