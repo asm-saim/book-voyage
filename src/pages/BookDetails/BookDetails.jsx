@@ -18,13 +18,24 @@ const BookDetails = () => {
 
 
     return (
-        <div className='border border-amber-300 flex'>
-            <div className='flex-1'>
-                <img className='w-72' src={image} alt="" />
-                <h2>{bookName}</h2>
+        <div className='border border-amber-300 flex my-10 gap-10'>
+            <div className='flex-1 bg-gray-700 rounded-2xl p-5'>
+                <img className='w-72 h-full mx-auto' src={image} alt="" />
             </div>
             <div className='flex-1'>
-                <h2>{author}</h2>
+                <h1 className='font-bold text-4xl mb-2'>{bookName}</h1>
+                <h3 className='text-lg my-2'><span className='font-bold'>By:</span>
+                    <span className='italic'> {author}</span></h3>
+                <h3>{category}</h3>
+                <p className='text-sm'>Review:{review}</p>
+                <p>{tags.map(tag => <button>{tag}</button>)}</p>
+                <p>NUmber of Pages: {totalPages}</p>
+                <p>Year of Publishing: {yearOfPublishing}</p>
+                <p>Rating: {rating}</p>
+                <div className='flex gap-5'>
+                    <button className='btn'>Read</button>
+                    <button className='btn'>Watch list</button>
+                </div>
             </div>
 
         </div>
