@@ -17,7 +17,7 @@ const Books = ({ loadedData }) => {
 
     return (
         <div>
-            <h1 className='text-4xl font-bold text-center mt-16 mb-5'>Available Books</h1>
+            <h1 className='text-4xl font-bold text-center mt-24 mb-5 '>Available Books</h1>
             <Suspense fallback="Loading...">
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10    my-10'>
                     {

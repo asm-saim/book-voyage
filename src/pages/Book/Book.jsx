@@ -15,7 +15,7 @@ const Book = ({ fetchPromise, bookData }) => {
 
     return (
         <Link to={`/book-details/${bookId}`}>
-            <div className="card bg-base-100 w-80 shadow-sm mx-auto bg-gray-700">
+            <div className="card bg-base-100  shadow-sm mx-auto bg-gray-800">
                 <figure className=' pt-5'>
                     <img className='h-60'
                         src={image}
@@ -34,7 +34,7 @@ const Book = ({ fetchPromise, bookData }) => {
                     </h2>
                     <h3><span className='font-bold'>Book by:</span> {publisher}</h3>
                     <div className='border text-gray-600 border-dashed'></div>
-                    <p className='line-clamp-3'>{review}</p>
+                    <p className='line-clamp-3 text-sm'>{review}</p>
                     <div className="card-actions justify-end">
                         <div className="badge badge-outline pb-1">{category}</div>
                         <div className="badge badge-outline pb-1">{rating} <IoStarSharp /></div>
