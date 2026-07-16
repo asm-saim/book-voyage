@@ -1,3 +1,6 @@
+import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+
 const getStoredBook = () => {
 
     const storedBookSTR = localStorage.getItem("readList")
@@ -14,14 +17,14 @@ const getStoredBook = () => {
 const addToStoredDB = (id) => {
 
     const storedBookData = getStoredBook();
-
     if (storedBookData.includes(id)) {
-        alert("Already ase")
+        toast.error("Book already added!");
     }
     else {
         storedBookData.push(id)
         const data = JSON.stringify(storedBookData)
-        localStorage.setItem("readList",data)
+        localStorage.setItem("readList", data)
+        toast.success("Book added to Read List!");
         console.log(data)
     }
 

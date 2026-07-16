@@ -20,11 +20,11 @@ const BookDetails = () => {
         rating, review, totalPages, yearOfPublishing, tags } = singleBook
 
     const handleMarkAsRead = (id) => {
-        Swal.fire({
-            title: "Book added to Read List!",
-            text: "You clicked the button!",
-            icon: "success"
-        });
+        // Swal.fire({
+        //     title: "Book added to Read List!",
+        //     text: "You clicked the button!",
+        //     icon: "success"
+        // });
 
         addToStoredDB(id)
     }
