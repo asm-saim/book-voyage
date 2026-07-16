@@ -5,6 +5,7 @@ const Navbar = () => {
     const list = <>
         <NavLink to="/" className={({ isActive }) => isActive ? "text-lime-300" : ""}><li className='m-3 font-semibold text-base'>Home</li></NavLink>
         <NavLink to="/about" className={({ isActive }) => isActive ? "text-lime-300" : ""}><li className='m-3 font-semibold text-base'>About</li></NavLink>
+        <NavLink to="/readList" className={({ isActive }) => isActive ? "text-lime-300" : ""}><li className='m-3 font-semibold text-base'>Read List</li></NavLink>
     </>
     return (
         <div className='w-full mx-auto'>
