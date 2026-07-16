@@ -1,6 +1,9 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import { addToStoredDB } from '../../utility/utility';
+import Swal from 'sweetalert2'
+
+
 
 const BookDetails = () => {
 
@@ -17,6 +20,11 @@ const BookDetails = () => {
         rating, review, totalPages, yearOfPublishing, tags } = singleBook
 
     const handleMarkAsRead = (id) => {
+        Swal.fire({
+            title: "Book added to Read List!",
+            text: "You clicked the button!",
+            icon: "success"
+        });
 
         addToStoredDB(id)
     }
@@ -40,7 +48,7 @@ const BookDetails = () => {
                 <p><span className='font-bold my-2'>Year of Publishing: </span> {yearOfPublishing}</p>
                 <p><span className='font-bold my-2'>Rating: </span>{rating}</p>
                 <div className='flex gap-5 my-2'>
-                    <button onClick={()=>handleMarkAsRead(id)} className='btn text-base text-black bg-lime-300'>Mark as Read</button>
+                    <button onClick={() => handleMarkAsRead(id)} className='btn text-base text-black bg-lime-300'>Mark as Read</button>
                     <button className='btn text-base text-black bg-green-400'>Add to Wishlist</button>
                 </div>
             </div>
