@@ -20,13 +20,18 @@ const ReadList = () => {
         setReadList(readListData)
     }, [])
 
-
+    //function for sort
     const handleSort = (type) => {
         setSort(type)
+
         if (type === "Publish Year") {
             const sortedPublishYear =
                 [...readList].sort((a, b) => a.yearOfPublishing - b.yearOfPublishing);
             setReadList(sortedPublishYear)
+        }
+        if (type === "Ratings") {
+            const sortedRatings = [...readList].sort((a, b) => a.rating - b.rating)
+            setReadList(sortedRatings)
         }
     }
 
@@ -37,7 +42,7 @@ const ReadList = () => {
                     <div tabIndex={0} role="button" className="btn m-1 bg-gray-700">Short By: {sort ? sort : ""}</div>
                     <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
                         <li><a onClick={() => handleSort("Publish Year")}>Publish Year</a></li>
-                        <li><a onClick={() => handleSort("ratings")}>Ratings</a></li>
+                        <li><a onClick={() => handleSort("Ratings")}>Ratings</a></li>
                     </ul>
                 </div>
             </div>
