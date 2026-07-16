@@ -9,6 +9,8 @@ const ReadList = () => {
 
     const [readList, setReadList] = useState([])
 
+    const [sort, setSort] = useState("")
+
     const data = useLoaderData();
 
     useEffect(() => {
@@ -18,8 +20,28 @@ const ReadList = () => {
         setReadList(readListData)
     }, [])
 
+
+    const handleSort = (type) => {
+        setSort(type)
+        if (type === "Publish Year") {
+            const sortedPublishYear =
+                [...readList].sort((a, b) => a.yearOfPublishing - b.yearOfPublishing);
+            setReadList(sortedPublishYear)
+        }
+    }
+
     return (
         <div>
+            <div className='mx-auto w-fit'>
+                <div className="dropdown">
+                    <div tabIndex={0} role="button" className="btn m-1 bg-gray-700">Short By: {sort ? sort : ""}</div>
+                    <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                        <li><a onClick={() => handleSort("Publish Year")}>Publish Year</a></li>
+                        <li><a onClick={() => handleSort("ratings")}>Ratings</a></li>
+                    </ul>
+                </div>
+            </div>
+
             <Tabs>
                 <TabList>
                     <Tab>Read List</Tab>
